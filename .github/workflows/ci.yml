@@ -1,0 +1,23 @@
+# https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+
+name: CI
+on:
+  push:
+    paths-ignore: ['*.md']
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - { node-version: 12.x, platform: ubuntu-latest }
+          - { node-version: 14.x, platform: windows-latest }
+          - { node-version: 16.x, platform: macos-latest }
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
