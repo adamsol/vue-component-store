@@ -3,6 +3,7 @@ vue-component-store
 
 [![License](https://img.shields.io/github/license/adamsol/vue-component-store.svg)](https://github.com/adamsol/vue-component-store/blob/master/LICENSE.txt)
 [![CI](https://github.com/adamsol/vue-component-store/actions/workflows/ci.yml/badge.svg)](https://github.com/adamsol/vue-component-store/actions)
+[![npm](https://img.shields.io/npm/v/vue-component-store.svg)](https://www.npmjs.com/package/vue-component-store)
 
 A simple plugin for Vue.js 2.6.x, offering a clean way to keep the state of your application inside your components.
 
@@ -13,6 +14,19 @@ Why?
 
 1. Vuex is centralized by design, but suggests dividing the store into modules to mimic the application's structure. This usually requires a lot of boilerplate. It's easier to use the existing component hierarchy and Vue's reactivity system directly instead.
 2. Vue has a `provide`/`inject` mechanism for passing data down the component hierarchy without chains of props, but [it's not reactive by default](https://github.com/vuejs/vue/issues/7017).
+
+Installation
+------------
+
+```sh
+npm install vue-component-store
+```
+
+```js
+import VueComponentStore from 'vue-component-store';
+
+Vue.use(VueComponentStore);
+```
 
 API
 ---
