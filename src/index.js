@@ -4,7 +4,7 @@ export default {
         Vue.mixin({
             beforeCreate() {
                 // Idea for provide/inject reactivity taken from https://github.com/vuejs/vue/issues/7017#issuecomment-480906691.
-                // Implementation details for options merging borrowed from https://github.com/LinusBorg/vue-reactive-provide/.
+                // Implementation details for options merging borrowed from https://github.com/LinusBorg/vue-reactive-provide/blob/0.2.1/lib/mixins/GlobalMixin.js.
                 // Note: the merge function for `inject` seems to work only with object-based definitions, even though simple lists with names to inject would suffice here.
 
                 const field_getter = name => name + '_$getter';
