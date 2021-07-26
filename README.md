@@ -5,7 +5,7 @@ vue-component-store
 [![CI](https://github.com/adamsol/vue-component-store/actions/workflows/ci.yml/badge.svg)](https://github.com/adamsol/vue-component-store/actions)
 [![npm](https://img.shields.io/npm/v/vue-component-store.svg)](https://www.npmjs.com/package/vue-component-store)
 
-A simple plugin for Vue.js 2.6.x, offering a clean way to keep the state of your application inside your components.
+A simple plugin for Vue.js 2.5–2.6, offering a clean way to keep the state of your application inside your components.
 
 This library was inspired by https://github.com/LinusBorg/vue-reactive-provide. The basic idea is similar, but the API and implementation are different.
 
