@@ -1,6 +1,7 @@
 {
   "name": "vue-component-store",
-  "version": "1.0.0",
+  "description": "Plugin for keeping the state of your Vue.js application inside components.",
+  "version": "1.0.1",
   "keywords": [
     "vue",
     "vuex",
