@@ -2,7 +2,7 @@
 module.exports = {
     moduleFileExtensions: ['js', 'vue'],
     testEnvironment: 'jsdom',
-    testMatch: ['**/test/**/*.js'],
+    testMatch: ['**/test/**/*.test.js'],
     transform: {
         '^.+\\.js$': 'babel-jest',
         '^.+\\.vue$': 'vue-jest',

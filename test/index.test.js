@@ -65,6 +65,12 @@ test('non-injected methods are inaccessible', () => {
     expect(wrapper.findComponent(GrandChild).vm.increase2).toBeUndefined();
 });
 
+test('provide options merge with mixin', () => {
+    const wrapper = init();
+    expect(wrapper.findComponent(GrandChild).vm.fieldFromMainMixin).toBe('fieldFromMainMixin');
+    expect(wrapper.findComponent(GrandChild).vm.methodFromMainMixin()).toBe('methodFromMainMixin');
+})
+
 test('bare provide/inject still works', () => {
     const wrapper = init();
     expect(wrapper.findComponent(GrandChild).vm.field4).toBe(1);
