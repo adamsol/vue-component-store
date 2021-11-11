@@ -5,9 +5,11 @@
 
 <script>
     import Child from './Child';
+    import MainMixin from '../mixins/mainMixin'
 
     export default {
         components: { Child },
+        mixins: [MainMixin],
 
         provideFields: ['field1', 'field2', 'negated3'],
         provideMethods: ['increase2', 'negate3'],

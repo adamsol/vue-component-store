@@ -5,8 +5,8 @@
 
 <script>
     export default {
-        injectFields: ['watch1', 'field2'],
-        injectMethods: ['negate3'],
+        injectFields: ['watch1', 'field2', 'fieldFromMainMixin'],
+        injectMethods: ['negate3', 'methodFromMainMixin'],
 
         inject: ['field4'],
         computed: {
