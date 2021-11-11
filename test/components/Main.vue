@@ -4,12 +4,12 @@
 </template>
 
 <script>
+    import Provider from '../mixins/provider';
     import Child from './Child';
-    import MainMixin from '../mixins/mainMixin'
 
     export default {
         components: { Child },
-        mixins: [MainMixin],
+        mixins: [Provider],
 
         provideFields: ['field1', 'field2', 'negated3'],
         provideMethods: ['increase2', 'negate3'],

@@ -1,27 +1,6 @@
-function arrayValueOptionMergeStrategy(toVal, fromVal) {
-    if (toVal === undefined) {
-        return fromVal
-    }
-    if (fromVal === undefined) {
-        return toVal
-    }
-    if (Array.isArray(toVal)) {
-        return toVal.concat(fromVal)
-    }
-    if (Array.isArray(fromVal)) {
-        return fromVal.concat(toVal)
-    }
-    return fromVal
-}
 
 export default {
     install(Vue) {
-        const strategies = Vue.config.optionMergeStrategies
-        strategies.provideFields = arrayValueOptionMergeStrategy
-        strategies.provideMethods = arrayValueOptionMergeStrategy
-        strategies.injectFields = arrayValueOptionMergeStrategy
-        strategies.injectMethods = arrayValueOptionMergeStrategy
-
         Vue.mixin({
             beforeCreate() {
                 // Idea for provide/inject reactivity taken from https://github.com/vuejs/vue/issues/7017#issuecomment-480906691.
@@ -56,5 +35,10 @@ export default {
                 }
             },
         });
+
+        // Custom optionMergeStrategies to support mixins.
+        for (const name of ['provideFields', 'injectFields', 'provideMethods', 'injectMethods']) {
+            Vue.config.optionMergeStrategies[name] = (a, b) => a && b ? a.concat(b) : a || b;
+        }
     },
 };
