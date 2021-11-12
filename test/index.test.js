@@ -69,3 +69,14 @@ test('bare provide/inject still works', () => {
     const wrapper = init();
     expect(wrapper.findComponent(GrandChild).vm.field4).toBe(1);
 });
+
+test('new options work with mixins', async () => {
+    const wrapper = init();
+    expect(wrapper.findComponent(GrandChild).vm.field5).toBe(0);
+    expect(wrapper.findComponent(Child).vm.field5).toBeUndefined();
+    expect(wrapper.findComponent(Child).vm.increase5).toBeUndefined();
+
+    await wrapper.findComponent(GrandChild).vm.increase5();
+    expect(wrapper.findComponent(Main).vm.field5).toBe(1);
+    expect(wrapper.findComponent(GrandChild).vm.field5).toBe(1);
+});

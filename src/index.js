@@ -35,5 +35,10 @@ export default {
                 }
             },
         });
+
+        // Custom optionMergeStrategies to support mixins.
+        for (const name of ['provideFields', 'injectFields', 'provideMethods', 'injectMethods']) {
+            Vue.config.optionMergeStrategies[name] = (a, b) => a && b ? a.concat(b) : a || b;
+        }
     },
 };

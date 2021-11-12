@@ -4,7 +4,11 @@
 </template>
 
 <script>
+    import Injector from '../mixins/injector';
+
     export default {
+        mixins: [Injector],
+
         injectFields: ['watch1', 'field2'],
         injectMethods: ['negate3'],
 
