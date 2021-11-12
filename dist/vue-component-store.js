@@ -96,7 +96,15 @@
               }
             }
           }
-        });
+        }); // Custom optionMergeStrategies to support mixins.
+
+        for (var _i2 = 0, _arr2 = ['provideFields', 'injectFields', 'provideMethods', 'injectMethods']; _i2 < _arr2.length; _i2++) {
+          var name = _arr2[_i2];
+
+          Vue.config.optionMergeStrategies[name] = function (a, b) {
+            return a && b ? a.concat(b) : a || b;
+          };
+        }
       }
     };
 
